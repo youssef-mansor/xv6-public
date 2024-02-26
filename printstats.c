@@ -4,6 +4,11 @@
 
 #define MAX_SIZE 100
 
+void printTextAndFloat(const char* text, float value) {
+    int fixedPointValue = (int)(value * 1000000); // 6 decimal places
+    printf(1, "%s %d.%d\n", text, fixedPointValue / 1000000, fixedPointValue % 1000000);
+}
+
 void bubble_sort(int arr[], int n) {
     int i, j, temp;
     for (i = 0; i < n - 1; i++) {
@@ -73,8 +78,8 @@ int main(int argc, char *argv[]) {
     int min = numbers[0];
     int max = numbers[n - 1];
 
-    printf(1, "Average: %.2f\n", mean);
-    printf(1, "Standard Deviation: %.2f\n", standard_deviation);
+    printTextAndFloat("Average: ", mean);
+    printTextAndFloat("Standard Deviation: ", standard_deviation);
     printf(1, "Median: %d\n", median);
     printf(1, "Min: %d\n", min);
     printf(1, "Max: %d\n", max);
